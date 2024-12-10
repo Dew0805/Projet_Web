@@ -1,0 +1,462 @@
+
+body {
+
+    font-family: 'Roboto', sans-serif;
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    background-color: #000000; /* Fond noir */
+
+    color: #FFFFFF; /* Texte blanc */
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 100vh;
+
+}
+
+
+.container {
+
+    flex: 1 0 auto; /* Permet au conteneur de s'étendre pour remplir l'espace disponible */
+
+}
+
+
+header {
+
+    text-align: center;
+
+    padding: 20px;
+
+    background-color: #111111; /* Fond légèrement plus clair pour le contraste */
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+.photo img {
+
+    border-radius: 50%;
+
+    width: 100px;
+
+    height: 100px;
+
+    object-fit: cover;
+
+    border: 2px solid #FFFFFF; /* Bordure blanche pour la photo */
+
+}
+
+
+nav ul {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin-top: 20px;
+
+}
+
+
+nav ul li {
+
+    display: inline;
+
+    margin: 0 10px;
+
+}
+
+
+nav ul li a {
+
+    color: #FFFFFF; /* Liens blancs */
+
+    text-decoration: none;
+
+}
+
+
+nav ul li a:hover {
+
+    text-decoration: underline; /* Souligner les liens au survol */
+
+}
+
+
+main {
+
+    padding: 20px;
+
+}
+
+
+section {
+
+    margin-bottom: 40px;
+
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    font-size: 2em;
+
+}
+
+
+.carousel {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 600px; /* Largeur maximale pour le carrousel */
+
+    margin: 0 auto 40px; /* Centrer le carrousel et ajouter de l'espace en dessous */
+
+    overflow: hidden;
+
+    border: 2px solid #FFFFFF; /* Bordure blanche pour le carrousel */
+
+    height: 300px; /* Hauteur fixe pour le carrousel */
+
+}
+
+
+.carousel-item {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    position: absolute;
+
+    opacity: 0;
+
+    transition: opacity 1s ease-in-out;
+
+}
+
+
+.carousel-item.active {
+
+    opacity: 1;
+
+}
+
+
+.projects-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes de largeur égale */
+
+    gap: 20px; /* Ajoute un espace entre les encadrés de projet */
+
+    perspective: 1000px; /* Ajoute une perspective pour l'effet de flip */
+
+}
+
+
+.project {
+
+    perspective: 1000px; /* Ajoute une perspective pour l'effet de flip */
+
+}
+
+
+.project-inner {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 250px; /* Hauteur fixe pour les projets */
+
+    border: 1px solid #FFFFFF; /* Bordure blanche */
+
+    background-color: #111111; /* Fond légèrement plus clair pour le contraste */
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    transition: transform 0.6s;
+
+    transform-style: preserve-3d;
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.project-front, .project-back {
+
+    backface-visibility: hidden;
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+.project-front h3 {
+
+    margin: 0;
+
+}
+
+
+.project-back {
+
+    background-color: #1f1f1f; /* Fond plus foncé pour le dos */
+
+    transform: rotateY(180deg);
+
+    padding: 10px;
+
+}
+
+
+.project:hover .project-inner {
+
+    transform: rotateY(180deg);
+
+}
+
+
+footer {
+
+    text-align: center;
+
+padding: 20px;
+
+background-color: #111111; /* Fond légèrement plus clair pour le contraste */
+
+flex-shrink: 0; /* Empêche le footer de se rétrécir */
+
+}
+
+
+.social-icons a {
+
+margin: 0 10px;
+
+color: #FFFFFF; /* Icônes blanches */
+
+font-size: 24px; /* Ajustez la taille des icônes selon vos besoins */
+
+transition: color 0.3s ease; /* Ajoute une transition pour l'effet de survol */
+
+}
+
+
+.social-icons a:hover {
+
+color: #AAAAAA; /* Changer la couleur des icônes au survol */
+
+}
+
+
+/* Centrer le formulaire de contact */
+
+#contact form {
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+max-width: 600px;
+
+margin: 0 auto;
+
+}
+
+
+#contact label {
+
+margin-top: 10px;
+
+}
+
+
+#contact input, #contact textarea {
+
+width: 100%;
+
+padding: 10px;
+
+margin-top: 5px;
+
+border: 1px solid #FFFFFF;
+
+background-color: #111111;
+
+color: #FFFFFF;
+
+transition: border-color 0.3s ease; /* Ajoute une transition pour l'effet de survol */
+
+}
+
+
+#contact input:focus, #contact textarea:focus {
+
+border-color: #AAAAAA; /* Changer la couleur de la bordure au focus */
+
+outline: none;
+
+}
+
+
+#contact button {
+
+margin-top: 20px;
+
+padding: 10px 20px;
+
+border: none;
+
+background-color: #FFFFFF;
+
+color: #000000;
+
+cursor: pointer;
+
+transition: background-color 0.3s ease; /* Ajoute une transition pour l'effet de survol */
+
+}
+
+
+#contact button:hover {
+
+background-color: #AAAAAA;
+
+}
+
+
+.checkbox-container {
+
+display: flex;
+
+align-items: center;
+
+margin-top: 10px;
+
+white-space: nowrap; /* Empêche le texte de passer à la ligne suivante */
+
+}
+
+
+.checkbox-container input {
+
+margin-right: 10px;
+
+}
+
+
+.checkbox-container label {
+
+margin: 0;
+
+}
+
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 768px) {
+
+.photo img {
+
+    width: 80px;
+
+    height: 80px;
+
+}
+
+
+.projects-container {
+
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes de largeur égale pour les écrans plus petits */
+
+}
+
+
+.project-inner {
+
+    height: 200px; /* Hauteur réduite pour les projets sur les écrans plus petits */
+
+}
+
+}
+
+
+@media (max-width: 480px) {
+
+.photo img {
+
+    width: 60px;
+
+    height: 60px;
+
+}
+
+
+.projects-container {
+
+    grid-template-columns: 1fr; /* 1 colonne de largeur égale pour les écrans très petits */
+
+}
+
+
+.project-inner {
+
+    height: 150px; /* Hauteur réduite pour les projets sur les écrans très petits */
+
+}
+
+}
